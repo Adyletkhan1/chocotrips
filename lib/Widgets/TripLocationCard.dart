@@ -61,7 +61,7 @@ class _TripLocationCardState extends State<TripLocationCard> {
                   IconButton(
                     icon: Icon(Icons.arrow_left),
                     onPressed: () {
-                      if (-1 < this.current) {
+                      if (0 < this.current) {
                         setState(() {
                           this.current -= 1;
                         });
