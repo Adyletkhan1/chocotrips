@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/Widgets/TripList.dart';
+import 'package:firebase_database/firebase_database.dart';
 
 class MyHomePage extends StatelessWidget {
   final String title;
@@ -8,6 +9,9 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    FirebaseDatabase.instance.reference().child('descriptions').child('id').set({
+      'description': 'lol'
+    });
     return Scaffold(
       appBar: AppBar(title: Text(title)),
       body: TripList(),

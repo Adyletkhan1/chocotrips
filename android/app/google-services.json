@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "667893349761",
+    "firebase_url": "https://pusheen-6c833.firebaseio.com",
+    "project_id": "pusheen-6c833",
+    "storage_bucket": "pusheen-6c833.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:667893349761:android:c9960adc6e610f1d",
+        "android_client_info": {
+          "package_name": "com.chocoslave.flutter_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "667893349761-afftu8rk7t5epac017ndelvjl2p0tabl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDFOUJc5RBaYcOZGUxvQLM9YpZqgciPr0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "667893349761-afftu8rk7t5epac017ndelvjl2p0tabl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
