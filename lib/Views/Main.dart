@@ -23,28 +23,23 @@ class MyHomePage extends StatelessWidget {
           // Important: Remove any padding from the ListView.
           padding: EdgeInsets.zero,
           children: <Widget>[
-            DrawerHeader(
-              child: Text('Drawer Header'),
-              decoration: BoxDecoration(
-                color: Colors.blue,
-              ),
-            ),
+            Image(image: new AssetImage("assets/resting-cat-face-1.gif")),
             ListTile(
-              title: Text('Item 1'),
+              leading: Icon(Icons.person),
+              title: Text('Профиль'),
               onTap: () {
-                // Update the state of the app
-                // ...
-                // Then close the drawer
-                Navigator.pop(context);
               },
             ),
             ListTile(
-              title: Text('Item 2'),
+              leading: Icon(Icons.bookmark),
+              title: Text('Сохранённые'),
               onTap: () {
-                // Update the state of the app
-                // ...
-                // Then close the drawer
-                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.info),
+              title: Text('О приложении'),
+              onTap: () {
               },
             ),
           ],
