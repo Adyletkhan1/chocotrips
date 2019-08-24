@@ -1,10 +1,36 @@
 import 'package:dots_indicator/dots_indicator.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/Widgets/CardContent.dart';
 
 import 'TripInfo.dart';
 import 'TripPlan.dart';
 
-class TripLocationCard extends StatelessWidget {
+class TripLocationCard extends StatefulWidget {
+  @override
+  _TripLocationCardState createState() => _TripLocationCardState();
+}
+
+class _TripLocationCardState extends State<TripLocationCard> {
+  List<CardContent> contents = [CardContent("Hello")];
+  int current = 0;
+
+  _TripLocationCardState() {
+    FirebaseDatabase.instance
+        .reference()
+        .child("trips")
+        .child("1")
+        .child("locations")
+        .once()
+        .then((DataSnapshot snapshot) {
+      setState(() {
+        print(snapshot.value);
+        snapshot.value.forEach((element) =>
+            this.contents.add(CardContent(element["name"])));
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -28,29 +54,46 @@ class TripLocationCard extends StatelessWidget {
                 Tab(text: 'Фото'),
               ],
             ),
-            title:
-                Center(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+            title: Center(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  IconButton(
+                    icon: Icon(Icons.arrow_left),
+                    onPressed: () {
+                      if (-1 < this.current) {
+                        setState(() {
+                          this.current -= 1;
+                        });
+                      }
+                    },
+                  ),
+                  Column(
                     children: <Widget>[
-                      IconButton(icon: Icon(Icons.arrow_left), onPressed: () {},),
-                      Column(
-                        children: <Widget>[
-                          DotsIndicator(
-                            dotsCount: 5,
-                            position: 1,
-                            decorator: DotsDecorator(
-                              spacing: const EdgeInsets.all(10.0),
-                              activeColor: Colors.pinkAccent,
-                            ),
-                          ),
-                      Text('Мемориал Славы'),
-                        ],
+                      DotsIndicator(
+                        dotsCount: contents.length,
+                        position: current,
+                        decorator: DotsDecorator(
+                          spacing: const EdgeInsets.all(10.0),
+                          activeColor: Colors.pinkAccent,
+                        ),
                       ),
-                      IconButton(icon: Icon(Icons.arrow_right), onPressed: () {},),
+                      Text(contents[current].name)
                     ],
                   ),
-                ),
+                  IconButton(
+                    icon: Icon(Icons.arrow_right),
+                    onPressed: () {
+                      if (this.contents.length - 1 > this.current) {
+                        setState(() {
+                          this.current += 1;
+                        });
+                      }
+                    },
+                  ),
+                ],
+              ),
+            ),
           ),
           body: TabBarView(
             children: [

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/Widgets/TripLocationCard.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 import 'TripMap.dart';
 
