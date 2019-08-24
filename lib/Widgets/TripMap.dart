@@ -1,6 +1,9 @@
 import 'dart:async';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/Views/Main.dart';
+import 'package:flutter_app/Widgets/TripList.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class TripMap extends StatefulWidget {
@@ -24,7 +27,7 @@ class TripMapState extends State<TripMap> {
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
+    return Scaffold(
       body: GoogleMap(
         compassEnabled: false,
         myLocationEnabled: true,
@@ -33,6 +36,20 @@ class TripMapState extends State<TripMap> {
         onMapCreated: (GoogleMapController controller) {
           _controller.complete(controller);
         },
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.startTop,
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.only(top: 90.0),
+        child: FloatingActionButton(
+          onPressed: () {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => MyHomePage(title: "Choco Trips")),
+            );
+          },
+          child: Icon(Icons.close),
+          mini: true,
+        ),
       ),
     );
   }
