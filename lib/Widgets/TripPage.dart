@@ -33,7 +33,6 @@ class TripPage extends StatelessWidget {
               right: 20.0,
               left: 20.0),
           child: new Container(
-            height: 600.0,
             width: MediaQuery.of(context).size.width,
             child: TripLocationCard(),
           ),
