@@ -5,8 +5,8 @@ import 'package:flutter/widgets.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
 
 class TripCard extends StatelessWidget {
-  final String text;
-  final String photo;
+  String text;
+  String photo;
   double rating;
   TripCard({Key key, this.text, this.photo, this.rating = 5}) : super(key: key);
 
