@@ -80,15 +80,15 @@ class _MyAppState extends State<MyApp> {
                 children: <Widget>[
                   Row(
                     children: <Widget>[
-//                      Image.asset(
-//                        "assets/logo.png",
-//                        width: ScreenUtil.getInstance().setWidth(110),
-//                        height: ScreenUtil.getInstance().setHeight(110),
-//                      ),
+                      Image.asset(
+                        "assets/logo.png",
+                        width: ScreenUtil.getInstance().setWidth(110),
+                        height: ScreenUtil.getInstance().setHeight(110),
+                      ),
 
                       Padding(
                         padding: const EdgeInsets.only(top: 16.0),
-                        child: Text("Choco Trips",
+                        child: Text("LOGO",
                             style: TextStyle(
                                 fontFamily: "Poppins-Bold",
                                 fontSize: ScreenUtil.getInstance().setSp(46),
