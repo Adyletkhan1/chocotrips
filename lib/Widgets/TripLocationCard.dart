@@ -18,6 +18,7 @@ class TripLocationCard extends StatelessWidget {
         length: 3,
         child: Scaffold(
           appBar: AppBar(
+            leading: null,
             bottom: TabBar(
               tabs: [
                 Tab(

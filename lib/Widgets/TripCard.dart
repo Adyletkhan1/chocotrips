@@ -26,7 +26,7 @@ class TripCard extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Text(text, style: TextStyle(color: Colors.white, fontSize: 22)),
+                Text(text, style: TextStyle(color: Colors.white, fontSize: 18)),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
@@ -44,7 +44,7 @@ class TripCard extends StatelessWidget {
                             borderColor: Colors.green,
                             spacing:0.0
                         ),
-                        Text(" ${(Random().nextDouble()+4).toStringAsFixed(2) }", style: TextStyle(color: Colors.white, fontSize: 22)),
+                        Text(" ${(Random().nextDouble()+4).toStringAsFixed(2) }", style: TextStyle(color: Colors.white, fontSize: 18)),
                       ],
                     ),
 

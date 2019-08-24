@@ -11,29 +11,56 @@ class TripList extends StatelessWidget {
       children: <Widget>[
         Padding(
           padding: const EdgeInsets.all(8.0),
-            child: Card(elevation: 7,clipBehavior:Clip.antiAlias, shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12.0),
-          ), child: Container(child: TripCard(text: "Парк имени 28-ми панфиловцев", photo: "assets/28.png"), height: 200,)),
+          child: Card(
+              elevation: 7,
+              clipBehavior: Clip.antiAlias,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12.0),
+              ),
+              child: Container(
+                child: TripCard(
+                    text: "Парк имени 28-ми панфиловцев",
+                    photo: "assets/28.png"),
+                height: 200,
+              )),
         ),
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: GestureDetector(
             onTap: () {
-            Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => TripPage()),
-            );
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => TripPage()),
+              );
             },
-            child: Card(elevation: 7,clipBehavior:Clip.antiAlias, shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(12.0),
-            ), child: Container(child: TripCard(text: "Парк Первого президента", photo: "assets/prez.png"), height: 200,)),
+            child: Card(
+                elevation: 7,
+                clipBehavior: Clip.antiAlias,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12.0),
+                ),
+                child: Container(
+                  child: TripCard(
+                      text: "Парк Первого президента",
+                      photo: "assets/prez.png"),
+                  height: 200,
+                )),
           ),
         ),
         Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Card(elevation: 7,clipBehavior:Clip.antiAlias, shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12.0),
-          ), child: Container(child: TripCard(text: "Высокогорный каток Медео", photo: "assets/medeo.png"), height: 200,)),
+          child: Card(
+              elevation: 7,
+              clipBehavior: Clip.antiAlias,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12.0),
+              ),
+              child: Container(
+                child: TripCard(
+                    text: "Высокогорный каток Медео",
+                    photo: "assets/medeo.png"),
+                height: 200,
+              )),
         ),
       ],
     );
