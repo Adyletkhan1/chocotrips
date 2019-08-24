@@ -3,15 +3,15 @@ import 'package:flutter/widgets.dart';
 
 class TripCard extends StatelessWidget {
   final String text;
-
-  TripCard({Key key, this.text}) : super(key: key);
+  final String photo;
+  TripCard({Key key, this.text, this.photo}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage("assets/28.png"),
+              image: AssetImage(photo),
               fit: BoxFit.fitWidth,
               alignment: Alignment.topCenter),
         ),
