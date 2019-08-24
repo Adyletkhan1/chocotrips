@@ -1,10 +1,14 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:smooth_star_rating/smooth_star_rating.dart';
 
 class TripCard extends StatelessWidget {
   final String text;
   final String photo;
-  TripCard({Key key, this.text, this.photo}) : super(key: key);
+  double rating;
+  TripCard({Key key, this.text, this.photo, this.rating = 5}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,10 +20,39 @@ class TripCard extends StatelessWidget {
               alignment: Alignment.topCenter),
         ),
         child: Container(
-          height: 64,
+          height: 100,
           child: Padding(
             padding: const EdgeInsets.only(left: 8, top: 32, right: 8),
-            child: Text(text, style: TextStyle(color: Colors.white, fontSize: 22)),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text(text, style: TextStyle(color: Colors.white, fontSize: 22)),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Row(
+                      children: <Widget>[
+                        SmoothStarRating(
+                            allowHalfRating: false,
+                            onRatingChanged: (v) {
+                              this.rating = v;
+                            },
+                            starCount: 1,
+                            rating: this.rating,
+                            size: 24.0,
+                            color: Colors.white,
+                            borderColor: Colors.green,
+                            spacing:0.0
+                        ),
+                        Text(" ${(Random().nextDouble()+4).toStringAsFixed(2) }", style: TextStyle(color: Colors.white, fontSize: 22)),
+                      ],
+                    ),
+
+                    Icon(Icons.favorite, color: Colors.red),
+                  ],
+                ),
+              ],
+            ),
           ),
           decoration: new BoxDecoration(
             gradient: new LinearGradient(
