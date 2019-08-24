@@ -8,8 +8,8 @@ void main() {
     DeviceOrientation.portraitUp,
   ]);
   runApp(MaterialApp(
-//  home: MyHomePage(title: "Choco Trips"),
-    home: TripPage(),
+  home: MyHomePage(title: "Choco Trips"),
+//    home: TripPage(),
     debugShowCheckedModeBanner: false,
   ));
 }
